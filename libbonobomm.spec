@@ -2,15 +2,16 @@ Summary:	A C++ interface for the libbonobo
 Summary(pl):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
 Version:	1.3.7
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
 # Source0-md5:	98a835a9c5ceb6f807fbe8745d6a421f
+Patch0:		%{name}-orbitcpp_1_3_8.patch
 URL:		http://gtkmm.sourceforge.net/
-BuildRequires:	gtkmm-devel >= 2.2.7
-BuildRequires:	libbonobo-devel >= 2.3.6
-BuildRequires:	orbitcpp-devel >= 1.3.7
+BuildRequires:	gtkmm-devel >= 2.2.8
+BuildRequires:	libbonobo-devel >= 2.4.0
+BuildRequires:	orbitcpp-devel >= 1.3.8
 BuildRequires:	pkgconfig
 Requires:	cpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,9 +27,9 @@ Summary:	libbonobomm header files, development documentation
 Summary(pl):	Pliki nag³ówkowe libbonobomm, dokumentacja dla programistów
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtkmm-devel >= 2.2.7
-Requires:	libbonobo-devel >= 2.3.6
-Requires:	orbitcpp-devel >= 1.3.7
+Requires:	gtkmm-devel >= 2.2.8
+Requires:	libbonobo-devel >= 2.4.0
+Requires:	orbitcpp-devel >= 1.3.8
 
 %description devel
 Header files and development documentation for libbonobomm library.
@@ -51,9 +52,13 @@ Biblioteki statyczne libbonobomm.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 # exceptions and rtti are used in this package --misiek
+%{__aclocal} -I scripts
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-static
 %{__make}
