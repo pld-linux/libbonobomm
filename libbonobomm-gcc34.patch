@@ -22,3 +22,15 @@ diff -urN aa/libbonobomm-1.3.8/bonobomm/servers/unknown_cimpl.h libbonobomm-1.3.
    static CppClassType unknown_cimpl_class_;
  
    Unknown_CImpl(const Unknown_CImpl&);
+diff -urN aa/libbonobomm-1.3.8/tools/m4/class_bonoboobject.m4 libbonobomm-1.3.8/tools/m4/class_bonoboobject.m4
+--- aa/libbonobomm-1.3.8/tools/m4/class_bonoboobject.m4	2003-07-01 00:59:59.000000000 +0200
++++ libbonobomm-1.3.8/tools/m4/class_bonoboobject.m4	2004-07-03 20:58:10.769340752 +0200
+@@ -200,7 +200,7 @@
+ ')dnl
+ 
+ private:
+-  friend class CppClassType;
++  friend class __CPPNAME__`'_Class;
+   static CppClassType `'__BASE__`'_class_;
+ 
+   __CPPNAME__`'(const __CPPNAME__&);
