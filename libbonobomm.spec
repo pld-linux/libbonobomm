@@ -1,18 +1,18 @@
 Summary:	A C++ interface for the libbonobo
 Summary(pl):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
-Version:	1.3.7
-Release:	2
+Version:	1.3.8
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	98a835a9c5ceb6f807fbe8745d6a421f
-Patch0:		%{name}-orbitcpp_1_3_8.patch
+# Source0-md5:	b464048a99191e0ce3ad8504f460731f
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtkmm-devel >= 2.2.8
 BuildRequires:	libbonobo-devel >= 2.4.0
+BuildRequires:	libtool
 BuildRequires:	orbitcpp-devel >= 1.3.8
 BuildRequires:	pkgconfig
 Requires:	cpp
@@ -54,10 +54,10 @@ Biblioteki statyczne libbonobomm.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 # exceptions and rtti are used in this package --misiek
+%{__libtoolize}
 %{__aclocal} -I scripts
 %{__autoconf}
 %{__automake}
