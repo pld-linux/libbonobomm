@@ -1,0 +1,57 @@
+--- libbonobomm-1.3.8/configure.in.orig	Mon Nov 17 22:28:39 2003
++++ libbonobomm-1.3.8/configure.in	Thu May 13 15:09:33 2004
+@@ -88,7 +88,7 @@
+ ORBITCPP_VERSION_NEEDED=1.3.8
+ AC_SUBST(ORBITCPP_VERSION_NEEDED)
+ 
+-PKG_CHECK_MODULES(LIBBONOBOMM, gtkmm-2.0 >= $GTKMM_VERSION_NEEDED libbonobo-2.0 >= $LIBBONOBO_VERSION_NEEDED ORBit-2.0-cpp >= $ORBITCPP_VERSION_NEEDED)
++PKG_CHECK_MODULES(LIBBONOBOMM, glibmm-2.4 >= $GTKMM_VERSION_NEEDED libbonobo-2.0 >= $LIBBONOBO_VERSION_NEEDED ORBit-2.0-cpp >= $ORBITCPP_VERSION_NEEDED)
+ AC_SUBST(LIBBONOBOMM_CFLAGS)
+ AC_SUBST(LIBBONOBOMM_LIBS)
+ 
+@@ -103,10 +103,10 @@
+ IDL_CFLAGS_BONOBO="-I/$IDLDIR_LIBBONOBO -I/$IDLDIR_BONOBO_ACTIVATION"
+ AC_SUBST(IDL_CFLAGS_BONOBO)
+ 
+-GTKMM_PREFIX=`pkg-config --variable=prefix gtkmm-2.0`
+-GTKMM_PROCDIR=$GTKMM_PREFIX/lib/gtkmm-2.0/proc
++GTKMM_PREFIX=`pkg-config --variable=prefix glibmm-2.4`
++GTKMM_PROCDIR=$GTKMM_PREFIX/lib/glibmm-2.4/proc
+ AC_SUBST(GTKMM_PROCDIR)
+-GTKMM_PROC=$GTKMM_PROCDIR/gtkmmproc
++GTKMM_PROC=$GTKMM_PROCDIR/glibmmproc
+ AC_SUBST(GTKMM_PROC)
+ 
+ #########################################################################
+--- libbonobomm-1.3.8/tools/extra_defs_gen/generate_defs_libbonobo.cc.orig	Sun Apr 21 18:23:56 2002
++++ libbonobomm-1.3.8/tools/extra_defs_gen/generate_defs_libbonobo.cc	Thu May 13 15:51:49 2004
+@@ -19,7 +19,7 @@
+  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
+-#include "gtkmm_generate_extra_defs/generate_extra_defs.h"
++#include "glibmm_generate_extra_defs/generate_extra_defs.h"
+ 
+ #include <libbonobo.h>
+ #include <bonobo/bonobo-item-handler.h>
+--- libbonobomm-1.3.8/tools/extra_defs_gen/Makefile.am.orig	Thu Oct 24 21:45:29 2002
++++ libbonobomm-1.3.8/tools/extra_defs_gen/Makefile.am	Thu May 13 15:52:46 2004
+@@ -2,7 +2,7 @@
+ # This is not used directly to build the rest of the project.
+ 
+ INCLUDES = $(LIBBONOBOMM_CFLAGS)
+-LIBS = $(LIBBONOBOMM_LIBS) -lgtkmm_generate_extra_defs-2.0
++LIBS = $(LIBBONOBOMM_LIBS) -lglibmm_generate_extra_defs-2.4
+ 
+ noinst_PROGRAMS = generate_extra_defs
+ generate_extra_defs_SOURCES = generate_defs_libbonobo.cc
+--- libbonobomm-1.3.8/bonobomm/servers/unknown_cppimpl.h.orig	Sat Oct 12 23:53:17 2002
++++ libbonobomm-1.3.8/bonobomm/servers/unknown_cppimpl.h	Wed May 19 20:59:21 2004
+@@ -25,6 +25,7 @@
+ 
+ #include "bonobomm/generated/Bonobo-cpp-skels.h"
+ #include <sigc++/sigc++.h>
++#include <sigc++/compatibility.h>
+ 
+ namespace Gnome
+ {
