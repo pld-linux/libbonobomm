@@ -55,3 +55,45 @@
  
  namespace Gnome
  {
+--- libbonobomm-1.3.8/tools/m4/Makefile.am.orig	Sat Jun 14 11:09:25 2003
++++ libbonobomm-1.3.8/tools/m4/Makefile.am	Wed May 19 23:07:15 2004
+@@ -11,5 +11,5 @@
+ # than putting them in separate directories and expecting packages
+ # to provide correct m4 include arguments.
+ # We should probably do this properly some time. TODO.
+-tools_m4_includedir = $(libdir)/gtkmm-2.0/proc/m4
++tools_m4_includedir = $(libdir)/glibmm-2.4/proc/m4
+ tools_m4_include_HEADERS = $(files_tools_m4_install)
+--- libbonobomm-1.3.8/bonobomm/libbonobommconfig.h.in.orig	Mon Nov 17 22:35:36 2003
++++ libbonobomm-1.3.8/bonobomm/libbonobommconfig.h.in	Wed May 19 23:05:41 2004
+@@ -1,7 +1,7 @@
+ #ifndef _GCONFMM_CONFIG_H
+ #define _GCONFMM_CONFIG_H 1
+ 
+-#include "gtkmmconfig.h"
++#include "glibmmconfig.h"
+ 
+ /* version numbers */
+ #undef GCONFMM_MAJOR_VERSION
+--- libbonobomm-1.3.8/libbonobomm-2.0-uninstalled.pc.in.orig	Fri Nov  1 23:50:19 2002
++++ libbonobomm-1.3.8/libbonobomm-2.0-uninstalled.pc.in	Wed May 19 23:04:23 2004
+@@ -5,7 +5,7 @@
+ 
+ Name: libbonobomm-2.0
+ Description: C++ wrapper for libbonobo
+-Requires: gtkmm-2.0 >= @GTKMM_VERSION_NEEDED@ libbonobo-2.0 >= @LIBBONOBO_VERSION_NEEDED@ ORBit-2.0-cpp >= @ORBITCPP_VERSION_NEEDED@
++Requires: glibmm-2.4 >= @GTKMM_VERSION_NEEDED@ libbonobo-2.0 >= @LIBBONOBO_VERSION_NEEDED@ ORBit-2.0-cpp >= @ORBITCPP_VERSION_NEEDED@
+ Version: @VERSION@
+ Libs: -L${libdir} -lbonobomm_generated_stubs-1.3 -lbonobomm_generated_skels-1.3 -lbonobomm_servers-1.3
+ Cflags: -I${includedir}/libbonobomm-2.0 -I${libdir}/libbonobomm-2.0/include
+--- libbonobomm-1.3.8/libbonobomm-2.0.pc.in.orig	Sat Oct 12 23:53:16 2002
++++ libbonobomm-1.3.8/libbonobomm-2.0.pc.in	Wed May 19 23:05:07 2004
+@@ -5,7 +5,7 @@
+ 
+ Name: libbonobomm-2.0
+ Description: C++ wrapper for libbonobo
+-Requires: gtkmm-2.0 >= @GTKMM_VERSION_NEEDED@ libbonobo-2.0 >= @LIBBONOBO_VERSION_NEEDED@ ORBit-2.0-cpp >= @ORBITCPP_VERSION_NEEDED@
++Requires: glibmm-2.4 >= @GTKMM_VERSION_NEEDED@ libbonobo-2.0 >= @LIBBONOBO_VERSION_NEEDED@ ORBit-2.0-cpp >= @ORBITCPP_VERSION_NEEDED@
+ Version: @VERSION@
+ Libs: -L${libdir} -lbonobomm_generated_stubs-1.3 -lbonobomm_generated_skels-1.3 -lbonobomm_servers-1.3
+ Cflags: -I${includedir}/libbonobomm-2.0 -I${libdir}/libbonobomm-2.0/include
