@@ -8,7 +8,6 @@ Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
 # Source0-md5:	98a835a9c5ceb6f807fbe8745d6a421f
 URL:		http://gtkmm.sourceforge.net/
-BuildRequires:	ORBit2-devel >= 2.7.6
 BuildRequires:	gtkmm-devel >= 2.2.7
 BuildRequires:	libbonobo-devel >= 2.3.6
 BuildRequires:	orbitcpp-devel >= 1.3.7
@@ -26,6 +25,9 @@ Summary:	libbonobomm header files, development documentation
 Summary(pl):	Pliki nag³ówkowe libbonobomm, dokumentacja dla programistów
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	gtkmm-devel >= 2.2.7
+Requires:	libbonobo-devel >= 2.3.6
+Requires:	orbitcpp-devel >= 1.3.7
 
 %description devel
 Header files and development documentation for libbonobomm library.
@@ -52,7 +54,7 @@ Biblioteki statyczne libbonobomm.
 %build
 # exceptions and rtti are used in this package --misiek
 %configure \
-	--enable-static=yes
+	--enable-static
 %{__make}
 
 %install
@@ -70,21 +72,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README ChangeLog AUTHORS NEWS
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc README ChangeLog AUTHORS NEWS
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-
-%dir %{_libdir}/libbonobomm-*
-
-%{_libdir}/libbonobomm-*/include
+%{_libdir}/libbonobomm-*
 %{_libdir}/gtkmm-*/proc/m4/*
-
-%{_pkgconfigdir}/*.pc
 %{_includedir}/libbonobomm-2.0
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
