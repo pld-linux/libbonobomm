@@ -2,18 +2,17 @@
 Summary:	A C++ interface for the libbonobo
 Summary(pl):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
-Version:	1.3.3
+Version:	1.3.5
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://switch.dl.sourceforge.net/sourceforge/gtkmm/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
 URL:		http://gtkmm.sourceforge.net/
 Requires:	cpp
 BuildRequires:	ORBit2-devel >= 2.0.0
-BuildRequires:	autoconf
 BuildRequires:	gtkmm-devel >= 2.0.0
 BuildRequires:	libbonobo-devel >= 2.0.0
-BuildRequires:	orbitcpp >= 1.3.4
+BuildRequires:	orbitcpp >= 1.3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -80,13 +79,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 
 %dir %{_libdir}/libbonobomm-*
-%dir %{_libdir}/gtkmm-*/proc
 
 %{_libdir}/libbonobomm-*/include
-%{_libdir}/gtkmm-*/proc/m4
+%{_libdir}/gtkmm-*/proc/m4/*
 
 %{_pkgconfigdir}/*.pc
-%{_includedir}/*
+%{_includedir}/libbonobomm-2.0
+%{_includedir}/libgnomemm-2.0/*
 
 %files static
 %defattr(644,root,root,755)
