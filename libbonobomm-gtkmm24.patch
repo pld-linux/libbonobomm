@@ -19,7 +19,7 @@
 +GTKMM_PROCDIR=$GTKMM_PREFIX/lib/glibmm-2.4/proc
  AC_SUBST(GTKMM_PROCDIR)
 -GTKMM_PROC=$GTKMM_PROCDIR/gtkmmproc
-+GTKMM_PROC=$GTKMM_PROCDIR/glibmmproc
++GTKMM_PROC=$GTKMM_PROCDIR/gmmproc
  AC_SUBST(GTKMM_PROC)
  
  #########################################################################
