@@ -89,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_libdir}/libbonobomm-*
-%{_libdir}/gtkmm-*/proc/m4/*
+%{_libdir}/glibmm-*/proc/m4/*
 %{_includedir}/libbonobomm-2.0
 %{_pkgconfigdir}/*.pc
 
