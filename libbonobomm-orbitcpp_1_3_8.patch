@@ -1,0 +1,9 @@
+diff -urN aaa/libbonobomm-1.3.7/bonobomm/generated/Makefile.am libbonobomm-1.3.7/bonobomm/generated/Makefile.am
+--- aaa/libbonobomm-1.3.7/bonobomm/generated/Makefile.am	2003-08-26 10:43:21.000000000 +0200
++++ libbonobomm-1.3.7/bonobomm/generated/Makefile.am	2003-11-10 15:05:12.000000000 +0100
+@@ -1,4 +1,4 @@
+-idl_defines = -D__Bonobo_COMPILATION  -D__Bonobo_Unknown_COMPILATION
++idl_defines = -D__Bonobo_COMPILATION  -D__Bonobo_Unknown_COMPILATION -D__Bonobo_GenericFactory_COMPILATION -D__Bonobo_Activation_types_COMPILATION
+ 
+ files_h_common = Bonobo.h
+ files_c_stubs = Bonobo-common.c Bonobo-stubs.c
