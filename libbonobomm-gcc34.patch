@@ -1,0 +1,24 @@
+diff -urN aa/libbonobomm-1.3.8/bonobomm/servers/listener.h libbonobomm-1.3.8/bonobomm/servers/listener.h
+--- aa/libbonobomm-1.3.8/bonobomm/servers/listener.h	2003-06-27 00:19:53.000000000 +0200
++++ libbonobomm-1.3.8/bonobomm/servers/listener.h	2004-07-03 20:24:25.425239856 +0200
+@@ -69,7 +69,7 @@
+   typedef BonoboListenerClass      BaseClassType;
+ 
+ private:
+-  friend class CppClassType;
++  friend class Listener_Class;
+   static CppClassType listener_class_;
+ 
+   Listener(const Listener&);
+diff -urN aa/libbonobomm-1.3.8/bonobomm/servers/unknown_cimpl.h libbonobomm-1.3.8/bonobomm/servers/unknown_cimpl.h
+--- aa/libbonobomm-1.3.8/bonobomm/servers/unknown_cimpl.h	2003-06-27 00:19:52.000000000 +0200
++++ libbonobomm-1.3.8/bonobomm/servers/unknown_cimpl.h	2004-07-03 20:23:43.850560168 +0200
+@@ -75,7 +75,7 @@
+   typedef BonoboObjectClass      BaseClassType;
+ 
+ private:
+-  friend class CppClassType;
++  friend class Unknown_CImpl_Class;
+   static CppClassType unknown_cimpl_class_;
+ 
+   Unknown_CImpl(const Unknown_CImpl&);
