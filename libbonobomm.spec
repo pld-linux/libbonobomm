@@ -1,12 +1,12 @@
 Summary:	A C++ interface for the libbonobo
 Summary(pl):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
-Version:	1.3.6
+Version:	1.3.7
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	d752ba2d9234783cad75002f8a9b172d
+# Source0-md5:	98a835a9c5ceb6f807fbe8745d6a421f
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	ORBit2-devel >= 2.7.6
 BuildRequires:	gtkmm-devel >= 2.2.7
