@@ -11,6 +11,7 @@ URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	gtkmm-devel >= 2.2.7
 BuildRequires:	libbonobo-devel >= 2.3.6
 BuildRequires:	orbitcpp-devel >= 1.3.7
+BuildRequires:	pkgconfig
 Requires:	cpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
