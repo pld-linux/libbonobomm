@@ -1,19 +1,18 @@
-%include        /usr/lib/rpm/macros.perl
 Summary:	A C++ interface for the libbonobo
 Summary(pl):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
-Version:	1.3.5
-Release:	3
+Version:	1.3.6
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	dab2ab9bb1a94f5fa676b1c473d6e9e1
+# Source0-md5:	d752ba2d9234783cad75002f8a9b172d
 URL:		http://gtkmm.sourceforge.net/
+BuildRequires:	ORBit2-devel >= 2.7.6
+BuildRequires:	gtkmm-devel >= 2.2.7
+BuildRequires:	libbonobo-devel >= 2.3.6
+BuildRequires:	orbitcpp-devel >= 1.3.7
 Requires:	cpp
-BuildRequires:	ORBit2-devel >= 2.7.5-1
-BuildRequires:	gtkmm-devel >= 2.0.0
-BuildRequires:	libbonobo-devel >= 2.0.0
-BuildRequires:	orbitcpp >= 1.3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -86,7 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_pkgconfigdir}/*.pc
 %{_includedir}/libbonobomm-2.0
-%{_includedir}/libgnomemm-2.0/*
 
 %files static
 %defattr(644,root,root,755)
