@@ -9,6 +9,8 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/1.3/%{name}-%{version}.t
 # Source0-md5:	98a835a9c5ceb6f807fbe8745d6a421f
 Patch0:		%{name}-orbitcpp_1_3_8.patch
 URL:		http://gtkmm.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gtkmm-devel >= 2.2.8
 BuildRequires:	libbonobo-devel >= 2.4.0
 BuildRequires:	orbitcpp-devel >= 1.3.8
