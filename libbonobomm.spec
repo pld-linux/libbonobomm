@@ -1,3 +1,4 @@
+%bcond_without	static	# don't build static library
 Summary:	A C++ interface for the libbonobo
 Summary(pl):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
@@ -65,7 +66,8 @@ Biblioteki statyczne libbonobomm.
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-static
+	--enable-static \
+	%{!?with_static:--disable-static}
 %{__make}
 
 %install
@@ -95,6 +97,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libbonobomm-2.0
 %{_pkgconfigdir}/*.pc
 
+%if %{with static}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
