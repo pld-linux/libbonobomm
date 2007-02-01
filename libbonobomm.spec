@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libbonobomm/1.3/%{name}-%{versio
 # Source0-md5:	b464048a99191e0ce3ad8504f460731f
 Patch0:		%{name}-gtkmm24.patch
 Patch1:		%{name}-gcc34.patch
+Patch2:		%{name}-orbit2.patch
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -60,6 +61,7 @@ Biblioteki statyczne libbonobomm.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # exceptions and rtti are used in this package --misiek
