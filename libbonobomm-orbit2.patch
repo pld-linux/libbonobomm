@@ -1,0 +1,12 @@
+diff -urN libbonobomm-1.3.8/bonobomm/generated/Makefile.am libbonobomm-1.3.8.new/bonobomm/generated/Makefile.am
+--- libbonobomm-1.3.8/bonobomm/generated/Makefile.am	2003-11-17 23:20:44.000000000 +0100
++++ libbonobomm-1.3.8.new/bonobomm/generated/Makefile.am	2007-02-01 12:12:17.731414723 +0100
+@@ -16,7 +16,7 @@
+ 
+ $(files_generated): $(ORBIT_IDL)
+ 	$(ORBIT_IDL) --headerguardprefix=BONOBOMM_ $(IDL_CFLAGS_BONOBO) $(IDLDIR_LIBBONOBO)/Bonobo.idl
+-	$(ORBIT_IDL) -lcpp $(idl_defines) $(IDL_CFLAGS_BONOBO) $(IDLDIR_LIBBONOBO)/Bonobo.idl
++	$(ORBIT_IDL) -l cpp $(idl_defines) $(IDL_CFLAGS_BONOBO) $(IDLDIR_LIBBONOBO)/Bonobo.idl
+ 
+ all-local: $(files_generated)
+ 
