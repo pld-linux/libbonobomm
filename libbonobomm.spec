@@ -2,7 +2,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	A C++ interface for the libbonobo
-Summary(pl.UTF-8):   Interfejs C++ dla libbonobo
+Summary(pl.UTF-8):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
 Version:	1.3.8
 Release:	2
@@ -32,7 +32,7 @@ Ten pakiet dostarcza interfejs C++ dla biblioteki libbonobo.
 
 %package devel
 Summary:	Header files for libbonobomm library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libbonobomm
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libbonobomm
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glibmm-devel >= 2.4.0
@@ -47,7 +47,7 @@ Pliki nagłówkowe biblioteki libbonobomm.
 
 %package static
 Summary:	libbonobomm static libraries
-Summary(pl.UTF-8):   Biblioteki statyczne libbonobomm
+Summary(pl.UTF-8):	Biblioteki statyczne libbonobomm
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
