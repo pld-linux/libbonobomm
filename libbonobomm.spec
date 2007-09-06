@@ -6,7 +6,7 @@ Summary:	A C++ interface for the libbonobo
 Summary(pl.UTF-8):	Interfejs C++ dla libbonobo
 Name:		libbonobomm
 Version:	1.3.8
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libbonobomm/1.3/%{name}-%{version}.tar.bz2
